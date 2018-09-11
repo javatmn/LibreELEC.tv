@@ -1,0 +1,4 @@
+# make a fixed link name
+# Note: support one webcam currently
+# TODO: improve this, see "/usr/lib/udev/rules.d/60-persistent-v4l.rules"
+KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", DRIVERS=="?*", SYMLINK+="webcam-tbox"
