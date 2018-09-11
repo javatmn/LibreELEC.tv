@@ -1,0 +1,16 @@
+diff --git a/xbmc/network/linux/NetworkLinux.cpp b/xbmc/network/linux/NetworkLinux.cpp
+index 66d996d..f028202 100644
+--- a/xbmc/network/linux/NetworkLinux.cpp
++++ b/xbmc/network/linux/NetworkLinux.cpp
+@@ -458,6 +458,11 @@ void CNetworkLinux::queryInterfaceList()
+       n = strcspn(p, ": \t");
+       p[n] = 0;
+
++      // hide internal interface from exposure to user
++      static const char *pre = "TB-";
++      if (strncmp(p, pre, strlen(pre)) == 0)
++        continue;
++
+       // save the result
+       std::string interfaceName = p;
+       GetMacAddress(interfaceName, macAddrRaw);
