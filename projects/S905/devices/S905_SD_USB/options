@@ -15,6 +15,9 @@
       KVIM)
         KERNEL_UBOOT_EXTRA_TARGET="kvim.dtb"
         ;;
+      T95m)
+        KERNEL_UBOOT_EXTRA_TARGET="gxl_p212_1g_t95m.dtb"
+        ;;
       *)
         KERNEL_UBOOT_EXTRA_TARGET="gxbb_p200.dtb gxbb_p200_2G.dtb gxl_p212_1g.dtb gxl_p212_2g.dtb gxbb_p201.dtb gxbb_p201_2G.dtb"
         ;;
