@@ -17,13 +17,13 @@
 ################################################################################
 
 PKG_NAME="fd628-aml"
-PKG_VERSION="f8bd53c"
-PKG_SHA256="c3f524763c25bdf63bb01eea56022e923c1e3b60be6904a496d106b251e509b1"
+PKG_VERSION="cbc6224"
+PKG_SHA256="768b3ad748b894544cfb5ac39156f0c71362159243cdee21ed8ffaa1c29842d3"
 PKG_ARCH="arm aarch64"
 PKG_LICENSE="GPL"
-PKG_SITE="https://github.com/tanixbox/tx3mini_linux_fd628"
-PKG_URL="https://github.com/tanixbox/tx3mini_linux_fd628/archive/$PKG_VERSION.tar.gz"
-PKG_SOURCE_DIR="tx3mini_linux_fd628-$PKG_VERSION*"
+PKG_SITE="https://github.com/javatmn/t95m1g_linux_fd628"
+PKG_URL="https://github.com/javatmn/t95m1g_linux_fd628/archive/$PKG_VERSION.tar.gz"
+PKG_SOURCE_DIR="t95m1g_linux_fd628-$PKG_VERSION*"
 PKG_DEPENDS_TARGET="toolchain linux"
 PKG_NEED_UNPACK="$LINUX_DEPENDS"
 PKG_SECTION="driver"
