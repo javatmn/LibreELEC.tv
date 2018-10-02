@@ -1,0 +1,18 @@
+[Unit]
+Description=TBox services running in the chrooted debain env
+Requires=sysinit.target debian-mount.service network-online.target
+After=debian-mount.service network-online.target
+Before=shutdown.target
+Conflicts=shutdown.target
+
+[Service]
+Type=simple
+RootDirectory=/storage/debian/
+RootDirectoryStartOnly=false
+ExecStart=/usr/local/bin/tbox/tbox-service.sh start
+ExecStop=/usr/local/bin/tbox/tbox-service.sh stop
+RemainAfterExit=true
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
