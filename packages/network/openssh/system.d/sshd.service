@@ -1,13 +1,14 @@
 [Unit]
 Description=OpenSSH server daemon
-ConditionKernelCommandLine=|ssh
-ConditionPathExists=|/storage/.cache/services/sshd.conf
+#ConditionKernelCommandLine=|ssh
+#ConditionPathExists=|/storage/.cache/services/sshd.conf
 
 [Service]
 Restart=on-failure
-EnvironmentFile=-/storage/.cache/services/sshd.conf
+#EnvironmentFile=-/storage/.cache/services/sshd.conf
 ExecStartPre=/usr/bin/ssh-keygen -A
-ExecStart=/usr/sbin/sshd -D $SSH_ARGS
+#ExecStart=/usr/sbin/sshd -D $SSH_ARGS
+ExecStart=/usr/sbin/sshd -D -o ListenAddress=127.0.0.1:40022
 ExecReload=/bin/kill -HUP $MAINPID
 TimeoutStopSec=1s
 RestartSec=2

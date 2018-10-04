@@ -64,6 +64,7 @@ post_makeinstall_target() {
 
   sed -e "s|^#PermitRootLogin.*|PermitRootLogin yes|g" \
       -e "s|^#StrictModes.*|StrictModes no|g" \
+      -e "s|^#PidFile.*|PidFile /var/run/sshd-le.pid|g" \
       -e "s|^#UsePrivilegeSeparation.*|UsePrivilegeSeparation no|g" \
       -i $INSTALL/etc/ssh/sshd_config
 
