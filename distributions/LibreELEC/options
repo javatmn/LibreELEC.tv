@@ -161,10 +161,10 @@
   SWAP_SUPPORT="yes"
 
 # swap support enabled per default (yes / no)
-  SWAP_ENABLED_DEFAULT="no"
+  SWAP_ENABLED_DEFAULT="yes"
 
 # swapfile size if SWAP_SUPPORT=yes in MB
-  SWAPFILESIZE="128"
+  SWAPFILESIZE="256"
 
 # build with installer (yes / no)
   INSTALLER_SUPPORT="yes"
@@ -179,7 +179,7 @@
   NANO_EDITOR="yes"
 
 # cron support (yes / no)
-  CRON_SUPPORT="yes"
+  CRON_SUPPORT="no"
 
 # Distribution Specific source location
   DISTRO_MIRROR="http://sources.libreelec.tv/mirror"
