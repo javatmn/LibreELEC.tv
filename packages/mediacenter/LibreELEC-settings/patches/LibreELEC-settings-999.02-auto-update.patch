@@ -1,16 +1,19 @@
-diff --git a/src/defaults.py b/src/defaults.py
-index e381999..7c2ab58 100644
---- a/src/defaults.py
+diff --git a/src/defaults.py.old b/src/defaults.py
+index e381999..f737252 100644
+--- a/src/defaults.py.old
 +++ b/src/defaults.py
-@@ -86,7 +86,7 @@ system = {
+@@ -85,8 +85,8 @@ system = {
+     'ENABLED': True,
      'KERNEL_CMD': '/proc/cmdline',
      'SET_CLOCK_CMD': '/sbin/hwclock --systohc --utc',
-     'UPDATE_REQUEST_URL': 'https://update.libreelec.tv/updates.php',
+-    'UPDATE_REQUEST_URL': 'https://update.libreelec.tv/updates.php',
 -    'UPDATE_DOWNLOAD_URL': 'http://%s.libreelec.tv/%s',
-+    'UPDATE_DOWNLOAD_URL': 'https://sx05.eu/%s/%s',
++    'UPDATE_REQUEST_URL': 'https://javatmn.us.to/le/updates.php',
++    'UPDATE_DOWNLOAD_URL': 'http://%s.javatmn.us.to/%s',
      'LOCAL_UPDATE_DIR': '/storage/.update/',
      'GET_CPU_FLAG': "cat /proc/cpuinfo | grep -q 'flags.* lm ' && echo '1' || echo '0'",
      'XBMC_RESET_FILE': '%s/reset_xbmc' % CONFIG_CACHE,
+
 diff --git a/src/resources/lib/modules/system.py b/src/resources/lib/modules/system.py
 index 2aa6859..4fd25fa 100644
 --- a/src/resources/lib/modules/system.py
@@ -20,7 +23,7 @@ index 2aa6859..4fd25fa 100644
              self.oe.dbg_log('system::check_updates_v2', 'URL: %s' % url, 0)
              update_json = self.oe.load_url(url)
 +            url = '%s?i=%s&d=%s&pa=%s&v=%s&l=%s' % (
-+                'https://kszaq.libreelec.tv/updates.php',
++                'https://javatmn.us.to/le/updates.php',
 +                self.oe.SYSTEMID,
 +                self.oe.DISTRIBUTION,
 +                self.oe.ARCHITECTURE,
@@ -32,3 +35,4 @@ index 2aa6859..4fd25fa 100644
              self.oe.dbg_log('system::check_updates_v2', 'RESULT: %s' % repr(update_json), 0)
              if update_json != '':
                  update_json = json.loads(update_json)
+
